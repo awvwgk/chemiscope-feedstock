@@ -14,7 +14,7 @@ build:
     - chemiscope-input = chemiscope.main:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -25,7 +25,6 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - ase
     - numpy
     - ipywidgets >=7,<9
 
@@ -37,6 +36,7 @@ test:
     - chemiscope-input --help
   requires:
     - pip
+    - ase
     - python {{ python_min }}
 
 about:
